@@ -43,7 +43,7 @@
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-brand-500 mt-0.5">•</span>
-                <span><strong>Duration:</strong> 486 hours (approx. 15 weeks)</span>
+                <span><strong>Duration:</strong> 486 hours (approx. 12 weeks)</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-brand-500 mt-0.5">•</span>
