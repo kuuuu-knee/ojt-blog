@@ -94,7 +94,7 @@ This outputs a fully static site to the `.output/public/` directory.
 
 ## ✍️ Adding a New Weekly Blog Post
 
-1. **Create a new Markdown file** in `content/posts/`:
+1. **Create a new Markdown file** in `content/blog/`:
 
    ```bash
    touch content/blog/week-04.md
