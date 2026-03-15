@@ -78,7 +78,12 @@ I was relieved — I had some experience with Laravel from school projects. But 
 
 ## 🔜 Looking Ahead
 
-Next week I'll be assigned my first real task: fixing a minor UI bug on the admin dashboard. I'm equal parts nervous and excited. Time to prove I belong here!
+Next week, my focus will be on:
+
+1. Studying frontend development tools and Nuxt.js API integration
+2. Setting up the database server
+3. Learning and testing Laravel API deployment on Ubuntu server
+4. Studying Docker and dockerizing the Laravel API
 
 ---
 
