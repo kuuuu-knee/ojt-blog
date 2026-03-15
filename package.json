@@ -1,0 +1,36 @@
+{
+  "name": "ojt-blog",
+  "version": "1.0.0",
+  "description": "A personal OJT (On-the-Job Training) blog built with Nuxt 3, Tailwind CSS, and Nuxt Content.",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuuuu-knee/ojt-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kuuuu-knee/ojt-blog/issues"
+  },
+  "homepage": "https://github.com/kuuuu-knee/ojt-blog#readme",
+  "overrides": {
+    "serialize-javascript": "^7.0.4",
+    "@nuxtjs/mdc": "^0.20.2"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.13.4",
+    "@nuxtjs/mdc": "^0.20.2",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "nuxt": "^3.21.2",
+    "serialize-javascript": "^7.0.4"
+  }
+}
