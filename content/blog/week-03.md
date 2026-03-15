@@ -67,4 +67,4 @@ Deploying both backend and frontend in a new environment required troubleshootin
 
 ## 🔜 Next Week
 
-I'll start learning about the database layer — writing my first SQL queries through the ORM. Sir Mark says "you'll understand why the API feels the way it does once you see the schema." Looking forward to the deep dive.
+I'll start integrating the backend(Laravel API) to the frontend(Nuxt.js)
