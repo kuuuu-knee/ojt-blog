@@ -20,10 +20,10 @@
 
           <div>
             <h2 class="text-2xl font-bold text-gray-900 mb-1">OJT Student</h2>
-            <p class="text-brand-600 font-medium mb-4">IT Intern · Computer Science Student</p>
+            <p class="text-brand-600 font-medium mb-4">IT Intern · Information Technology Student</p>
             <p class="text-gray-600 leading-relaxed">
               Hi! I'm currently on my On-the-Job Training (OJT) as part of my degree program in
-              Computer Science. This blog documents my internship journey — from the first day jitters
+              Information Technology. This blog documents my internship journey — from the first day jitters
               to growing into a contributing team member.
             </p>
           </div>
@@ -43,11 +43,11 @@
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-brand-500 mt-0.5">•</span>
-                <span><strong>Duration:</strong> 600 hours (approx. 15 weeks)</span>
+                <span><strong>Duration:</strong> 486 hours (approx. 15 weeks)</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-brand-500 mt-0.5">•</span>
-                <span><strong>Department:</strong> Engineering / IT</span>
+                <span><strong>Department:</strong> IT</span>
               </li>
             </ul>
           </div>
@@ -88,8 +88,8 @@
 useHead({ title: 'About — OJT Blog' })
 
 const techStack = [
-  'Vue 3', 'Nuxt 3', 'TypeScript', 'Tailwind CSS',
-  'Git', 'REST APIs', 'Node.js', 'SQL',
+  'Nuxt 3', 'Tailwind CSS',
+  'Git', 'Laravel API', 'Node.js', 'MariaDB',
 ]
 
 const goals = [

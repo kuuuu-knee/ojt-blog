@@ -1,106 +1,69 @@
 ---
-title: "Building My First Feature: Date Range Filter"
+title: "First Deployment on Ubuntu Server: Week 3 as an IT Intern"
 week: 3
-date: "January 20, 2025"
-description: "From requirements to deployed feature — building a date-range filter for the admin dashboard and learning about component design along the way."
-focus: "Feature Development"
+date: "March 9 - 13, 2026"
+description: "Deploying and dockerizing both backend and frontend applications on Ubuntu Server."
+focus: "Deployment"
 readTime: 6
 tags:
-  - feature
-  - components
-  - vue
-  - api
-coverImage: /images/week3-cover.jpg
+  - deployment
+  - docker
+  - ubuntu
+  - server
+coverImage: /images/week3/week3-cover.jpg
 images:
-  - src: /images/week3-filter-ui.jpg
-    alt: The date-range filter component
-  - src: /images/week3-pr.jpg
-    alt: Pull request merged
-  - src: /images/week3-standup.jpg
-    alt: Daily standup notes
+  - src: /images/week3/week3-team.jpg
+    alt: JMH IT team
+  - src: /images/week3/week3-planning.jpg
+    alt: Planning session
+  - src: /images/week3/week3-planning3.jpg
+    alt: Planning session
+  - src: /images/week3/week3-backend_deploy.jpg
+    alt: Backend deployment on Ubuntu Server
+  - src: /images/week3/week3-backend_deploy2.jpg
+    alt: Backend deployment on Ubuntu Server
+  - src: /images/week3/week3-frontend_deployment.jpg
+    alt: Frontend deployment on Ubuntu Server
+  - src: /images/week3/week3-docker.jpg
+    alt: Docker setup and configuration
+  - src: /images/week3/week3-node.jpg
+    alt: Node.js setup and configuration
+  - src: /images/week3/week3-task_checking.jpg
+    alt: Task checking
 ---
 
-## 🚀 My First Real Feature
+## 🚀 Deployment & Integration Milestones
 
-This week I went from "bug fixer" to "feature developer" — at least in my own head. The task:
+This week was focused on deploying and integrating both backend and frontend systems in a real server environment:
 
-> **FEAT-78:** *Add a start-date / end-date filter to the admin transactions table.*
-
-The acceptance criteria were clear: two date inputs, a "Filter" button, API call with query params, and the table should refresh. Sounds simple. Almost always is, until you start.
-
-## 🎨 Component Design
-
-I started by breaking the feature into smaller pieces:
-
-1. A `DateRangeFilter.vue` component with two `<input type="date">` fields
-2. An event emitted to the parent when the user clicks "Filter"
-3. The parent passes the dates as query parameters to the API composable
-
-Here's the core of the filter component:
-
-```vue
-<script setup lang="ts">
-const emit = defineEmits<{
-  filter: [{ from: string; to: string }]
-}>()
-
-const from = ref('')
-const to = ref('')
-
-function applyFilter() {
-  if (!from.value || !to.value) return
-  emit('filter', { from: from.value, to: to.value })
-}
-</script>
-```
-
-The senior dev suggested using `defineEmits` with typed generics — a pattern I hadn't seen before. The code is much more self-documenting this way.
-
-## 🌐 Working with the API
-
-The backend API accepts optional `startDate` and `endDate` query parameters:
-
-```
-GET /api/transactions?startDate=2025-01-01&endDate=2025-01-31
-```
-
-I updated the `useTransactions` composable to accept these as optional arguments and pass them to the Axios request. I learned about `URLSearchParams` as a clean way to build query strings.
+- Initialized the deployment of the Laravel API in the Ubuntu Server (installed PHP, Git, NGINX, and MySQL)
+- Deployed the Laravel API in the Ubuntu Server and dockerized the Laravel API inside the Ubuntu Server
+- Made adjustments in the database server and fixed the training attendance page
+- Made further adjustments in the database and deployed the frontend (Nuxt.js) in the Ubuntu Server
+- Dockerized the frontend (Nuxt.js) in the Ubuntu Server and added partial backend to the Attendance Management page
 
 ## 📋 Tasks This Week
 
-1. Build `DateRangeFilter.vue` component
-2. Integrate filter with the transactions API composable
-3. Handle loading and error states during filtered fetch
-4. Write component tests for the date validation logic
-5. Get the PR reviewed and merged by end of Friday
-
-## ✅ PR Merged — But Not Without Feedback
-
-Sir Mark approved the PR after two rounds of review. Feedback highlights:
-
-- Validate that `from` date is not after `to` date (I missed this!)
-- Disable the "Filter" button while a request is in-flight (UX improvement)
-- Clear filter results if either date input is cleared
-
-I addressed all three. The validation feedback especially stung a bit — it was a logical edge case I should have caught during testing.
+1. Set up and configure Ubuntu Server for deployment
+2. Install required software (PHP, Git, NGINX, MySQL)
+3. Deploy and dockerize the Laravel API
+4. Adjust and maintain the database server
+5. Fix and enhance the training attendance page
+6. Deploy and dockerize the Nuxt.js frontend
+7. Add backend logic to the Attendance Management page
 
 ## 😓 Challenges
 
-The hardest part wasn't the code; it was **understanding the existing API contract**. The backend documentation was outdated and said the parameter was `start_date` (snake_case) but the actual API expected `startDate` (camelCase). I spent two hours debugging a silent 200-OK response with empty data before finding this.
-
-**Lesson:** Never trust outdated docs. Test the API directly with Postman first.
+Deploying both backend and frontend in a new environment required troubleshooting server configurations and Docker setup. Adjusting the database and ensuring both apps worked together smoothly took several iterations. Integrating backend logic into the Attendance Management page was a new challenge, but it improved my understanding of full-stack workflows.
 
 ## 💡 Lessons Learned
 
-> **Build for the unhappy path first.** Validating bad input, handling loading states, and showing empty states make the difference between intern-level and professional-level code.
+> **"Deployment is where everything comes together — and where every small mistake shows."**
 
-- `defineEmits` with TypeScript generics makes component contracts explicit
-- Date inputs are tricky across browsers — always test in Chrome *and* Firefox
-- Postman is your best friend when the documentation lies
-
-## 📸 Team Moment
-
-On Friday, Carla (the other intern) and I were both presenting our work to the team in the weekly demo meeting. It was nerve-wracking presenting to eight people, but seeing my feature in action on the screen felt incredibly rewarding. Carla crushed her presentation too.
+- Real server deployment is more complex than local development
+- Docker makes it easier to manage and replicate environments
+- Database changes can have wide-reaching effects on both backend and frontend
+- Incremental testing and deployment help catch issues early
 
 ## 🔜 Next Week
 

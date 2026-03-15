@@ -1,85 +1,74 @@
 ---
-title: "First Bug Fix and Code Review Survival Guide"
+title: "Start of the Journey: Week 2 as an IT Intern"
 week: 2
-date: "January 13, 2025"
-description: "Tackling my first real bug, surviving a code review, and learning that reading other people's code is a skill of its own."
-focus: "Bug Fixing & Code Review"
+date: "March 2 - 6, 2026"
+description: "DevOps Tasks"
+focus: "DevOps"
 readTime: 5
 tags:
-  - debugging
-  - code-review
-  - vue
-coverImage: /images/week2-cover.jpg
+  - devOps
+  - server
+  - nuxt
+  - docker
+coverImage: /images/week2/week2-cover.jpg
 images:
-  - src: /images/week2-bugfix.jpg
-    alt: Debugging session on the admin dashboard
-  - src: /images/week2-review.jpg
-    alt: Code review on GitHub
+  - src: /images/week2/week2-team.jpg
+    alt: Backend development team + DevOps team
+  - src: /images/week2/week2-db_server.jpg
+    alt: Database server setup
+  - src: /images/week2/week2-db_server1.jpg
+    alt: Server setup and configuration
+  - src: /images/week2/week2-docker.jpg
+    alt: Docker setup and configuration
+  - src: /images/week2/week2-nuxt_begin.jpg
+    alt: Nuxt.js frontend setup
+  - src: /images/week2/week2-postman.jpg
+    alt: Postman API testing
+  - src: /images/week2/week2-server_setup.jpg
+    alt: Server setup and configuration
+  - src: /images/week2/week2-server_setup2.jpg
+    alt: Server setup and configuration
+  - src: /images/week2/week2-server.jpg
+    alt: Server setup and configuration
 ---
 
-## 🐛 My First Bug Ticket
+## 🚀 Learning & Setting Up
 
-Monday morning, a Jira ticket landed in my queue:
+This week was all about building the foundation for the project and learning new tools:
 
-> **BUG-142:** *Admin dashboard table does not render when the API returns an empty array.*
-
-Sir Mark assigned it to me with a note: *"Good starter task. Shouldn't take more than a day."*
-
-It took me two.
-
-## 🔍 Digging Into the Codebase
-
-The admin dashboard is a Vue 3 component about 400 lines long. I spent the first few hours just reading — trying to understand the data flow before touching anything. The bug was in a `v-if` condition that didn't account for the empty array case:
-
-```vue
-<!-- Before (broken) -->
-<template v-if="data">
-  <DataTable :rows="data" />
-</template>
-
-<!-- After (fixed) -->
-<template v-if="data && data.length > 0">
-  <DataTable :rows="data" />
-</template>
-<template v-else>
-  <EmptyState message="No records found." />
-</template>
-```
-
-Simple fix. Long journey to get there.
-
-## 👀 Surviving the Code Review
-
-I opened a pull request on GitHub and Sir Mark reviewed it within the hour. His feedback:
-
-- ✅ Correct fix
-- 🔄 Rename `data` to something more descriptive (`tableRows`)
-- 📝 Add a comment explaining *why* the empty check is needed
-- 🧪 Write a unit test for the empty state
-
-I hadn't thought about the test. Back to work.
+- Studied the tools needed for frontend development, focusing on how to call the Laravel API from the Nuxt.js frontend.
+- Set up the database server and explored how to deploy the Laravel API on an Ubuntu server.
+- Tested the deployment of the Laravel API in the Ubuntu environment to ensure everything worked as expected.
+- Learned about Docker and the process of dockerizing the Laravel API for easier deployment and scalability.
+- Successfully created a Dockerized version of the Laravel API.
 
 ## 📋 Tasks This Week
 
-1. Fix BUG-142 on the admin dashboard
-2. Write a unit test for the fix using Vitest
-3. Attend daily standups (15-minute morning check-ins)
-4. Study the codebase's component library and design system
+1. Study frontend development tools and Nuxt.js API integration
+2. Set up the database server
+3. Learn and test Laravel API deployment on Ubuntu server
+4. Study Docker and dockerize the Laravel API
 
 ## 😓 Challenges
 
-Writing the unit test was harder than fixing the bug. The project uses Vitest + Vue Test Utils, neither of which I had used before. I spent an afternoon reading documentation and adapting an existing test as a template.
-
-Also: **code reviews feel very personal at first.** Every comment felt like a critique of me, not just the code. I had to remind myself that feedback is how teams maintain quality — it's not personal.
+Learning how to connect the Nuxt.js frontend to the Laravel API was challenging at first, especially with new tools and frameworks. Setting up the database server and deploying the API on Ubuntu required careful attention to detail. Dockerizing the API was a new experience, but it made the deployment process much smoother after some trial and error.
 
 ## 💡 Lessons Learned
 
-> **"Others' code is written in a foreign language that you learn to read before you write."**
+> **"Every new tool is a new opportunity to grow."**
 
-- Always run the existing tests before making changes (some were already failing — not my fault!)
-- Empty/null states are *first-class* UI concerns, not afterthoughts
-- `v-if` vs `v-show` matters for performance — I asked and got a 20-minute lesson from the senior dev
+- Understanding how frontend and backend communicate is essential for full-stack development
+- Deployment on a real server (Ubuntu) is different from local development and requires extra steps
+- Docker simplifies deployment once you get past the initial learning curve
 
 ## 🔜 Next Week
 
-I'll be assigned a slightly larger feature: adding a date-range filter to the dashboard table. My first feature from scratch. The nervous butterflies are back!
+Next week, I'll focus on deploying and dockerizing both the backend and frontend applications in the Ubuntu Server environment. This will include:
+
+- Initializing the deployment of the Laravel API in Ubuntu (installing PHP, Git, NGINX, and MySQL)
+- Deploying and dockerizing the Laravel API
+- Adjusting the database server and fixing the training attendance page
+- Deploying and dockerizing the Nuxt.js frontend
+- Adding backend logic to the Attendance Management page
+
+These steps will help ensure both applications are production-ready and integrated smoothly.

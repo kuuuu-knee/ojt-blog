@@ -79,7 +79,6 @@
             <span class="w-6 h-6 rounded bg-brand-600 flex items-center justify-center text-white text-xs font-bold">OJT</span>
             <span>My OJT Journey — {{ new Date().getFullYear() }}</span>
           </div>
-          <p class="text-xs text-gray-400">Built with Nuxt 3 &amp; Tailwind CSS</p>
         </div>
       </div>
     </footer>

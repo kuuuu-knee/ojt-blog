@@ -120,8 +120,7 @@ const latestPosts = computed(() => (allPosts.value ?? []).slice(0, 3))
 
 const stats = computed(() => [
   { value: allPosts.value?.length ?? 0, label: 'Weekly Posts' },
-  { value: '600+', label: 'Hours Logged' },
-  { value: '10+', label: 'Skills Gained' },
+  { value: '128', label: 'Hours Logged' },
   { value: '1', label: 'Company' },
 ])
 </script>
